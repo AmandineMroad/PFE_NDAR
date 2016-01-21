@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#000000">
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:text="Option 1"
+        android:id="@+id/option1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:background="#c52b2b" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:text="Option 2"
+        android:id="@+id/option2"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:background="#fff265" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:text="Option 3"
+        android:id="@+id/option3"
+        android:layout_below="@+id/option1"
+        android:layout_alignLeft="@+id/option1"
+        android:layout_alignStart="@+id/option1"
+        android:layout_marginTop="5dp"
+        android:background="#ff9900" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:text="Option 4"
+        android:id="@+id/option4"
+        android:layout_alignTop="@+id/option3"
+        android:layout_alignLeft="@+id/option2"
+        android:layout_alignStart="@+id/option2"
+        android:background="#62f407" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:text="Option 5"
+        android:id="@+id/option5"
+        android:layout_below="@+id/option3"
+        android:layout_alignLeft="@+id/option3"
+        android:layout_alignStart="@+id/option3"
+        android:background="#03fe8d"
+        android:layout_marginTop="5dp" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:text="Option 6"
+        android:id="@+id/option6"
+        android:layout_alignTop="@+id/option5"
+        android:layout_alignLeft="@+id/option4"
+        android:layout_alignStart="@+id/option4"
+        android:background="#01fedc" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:text="Option 7"
+        android:id="@+id/option7"
+        android:layout_below="@+id/option5"
+        android:layout_alignLeft="@+id/option3"
+        android:layout_marginTop="5dp"
+        android:background="#066df3" />
+
+    <ImageButton
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:text="Option 8"
+        android:id="@+id/option8"
+        android:layout_below="@+id/option6"
+        android:layout_alignLeft="@+id/option4"
+        android:background="#0008f7"
+        android:layout_marginTop="5dp" />
+
+</RelativeLayout>

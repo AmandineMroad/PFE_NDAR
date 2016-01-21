@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">PFE_NDAR</string>
     <string name="action_settings">Settings</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="fav_add">Add to "To see"</string>
+    <string name="fav_delete">Remove from "To see"</string>
+
+    <string name="pop_up_object_message">Access to this object ?</string>
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

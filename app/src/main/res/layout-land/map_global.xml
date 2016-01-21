@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#000000">
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/room12"
+        android:background="#00ffffff"
+        android:src="@drawable/map_global_room12"
+        android:layout_marginTop="175dp"
+        android:layout_marginLeft="20dp" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="180dp"
+        android:text="11"
+        android:id="@+id/room11"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="95dp"
+        android:background="#c9aeda" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:text="10"
+        android:id="@+id/room10"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="35dp"
+        android:background="#f3c9dc" />
+
+    <Button
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:text="13"
+        android:id="@+id/room13"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="275dp"
+        android:background="#f3c9dc" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:text="9"
+        android:id="@+id/room9"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="155dp"
+        android:background="#d7dafa" />
+
+    <Button
+        android:layout_width="240dp"
+        android:layout_height="60dp"
+        android:text="1"
+        android:id="@+id/room1"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="275dp"
+        android:background="#c9aeda" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="120dp"
+        android:text="7"
+        android:id="@+id/room7"
+        android:layout_marginLeft="360dp"
+        android:layout_marginTop="155dp"
+        android:background="#f3c9dc" />
+
+    <Button
+        android:layout_width="140dp"
+        android:layout_height="120dp"
+        android:text="8"
+        android:id="@+id/room8"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="35dp"
+        android:background="#c9aeda" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:text="4"
+        android:id="@+id/room4"
+        android:layout_marginLeft="460dp"
+        android:layout_marginTop="35dp"
+        android:background="#65c8e3" />
+
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:text="5"
+        android:id="@+id/room5"
+        android:layout_marginLeft="540dp"
+        android:layout_marginTop="0dp"
+        android:background="#c9aeda" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="240dp"
+        android:text="3"
+        android:id="@+id/room3"
+        android:layout_marginLeft="540dp"
+        android:layout_marginTop="75dp"
+        android:background="#d7dafa" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="120dp"
+        android:text="6"
+        android:id="@+id/room6"
+        android:layout_marginLeft="420dp"
+        android:layout_marginTop="155dp"
+        android:background="#d7dafa" />
+
+    <Button
+        android:layout_width="60dp"
+        android:layout_height="120dp"
+        android:text="2"
+        android:id="@+id/room2"
+        android:layout_marginLeft="480dp"
+        android:layout_marginTop="155dp"
+        android:background="#f3c9dc" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:id="@+id/map_global_flag12"
+            android:background="#00ffffff"
+            android:src="@drawable/flag_red"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="195dp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:id="@+id/map_global_flag_last"
+            android:src="@drawable/flag_last_seen" />
+    </FrameLayout>
+
+</FrameLayout>
