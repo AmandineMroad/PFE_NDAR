@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="room_content_1"></array>
+    <array name="room_content_2"></array>
+    <array name="room_content_3"></array>
+    <array name="room_content_4"></array>
+    <array name="room_content_5"></array>
+    <array name="room_content_6"></array>
+    <array name="room_content_7"></array>
+    <array name="room_content_8"></array>
+    <array name="room_content_9"></array>
+    <array name="room_content_10"></array>
+    <array name="room_content_11"></array>
+
+
+    <array name="room_content_12">
+        <item>@array/r12_001</item>
+        <item>@array/r12_002</item>
+    </array>
+
+    <array name="room_content_13"></array>
+</resources>

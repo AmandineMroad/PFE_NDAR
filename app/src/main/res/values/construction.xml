@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="map_construction">
+        <item>@array/infos_room1</item>
+        <item>@array/infos_room2</item>
+        <item>@array/infos_room3</item>
+        <item>@array/infos_room4</item>
+        <item>@array/infos_room5</item>
+        <item>@array/infos_room6</item>
+        <item>@array/infos_room7</item>
+        <item>@array/infos_room8</item>
+        <item>@array/infos_room9</item>
+        <item>@array/infos_room10</item>
+        <item>@array/infos_room11</item>
+        <item>@array/infos_room12</item>
+        <item>@array/infos_room13</item>
+
+    </array>
+</resources>

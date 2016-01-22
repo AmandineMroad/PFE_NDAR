@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <!-- /!\ SYNTAX /!\
+    <array name="rX_Y">
+        <item>@id/flag_rX_Y</item>
+        <item>ObjectName</item>
+        <item>Description</item>
+    </array>
+    -->
+    <array name="r12_001">
+        <item>@id/flag_r12_001</item>
+        <item>Object r12_001</item>
+        <item>A very ugly description</item>
+    </array>
+
+    <array name="r12_002">
+        <item>@id/flag_r12_002</item>
+        <item>Object r12_002</item>
+        <item>Another very ugly description</item>
+    </array>
+
+
+</resources>

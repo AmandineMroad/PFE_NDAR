@@ -22,11 +22,13 @@ public class MapActivity extends AppCompatActivity {
 
     protected void onResume(){
         super.onResume();
-        MapTools.setRoomsFlags();
+        MapTools.setRoomsGlobalFlags();
     }
 
     protected void showDial(String message){
         MapTools.showPopUp(this, message);
+
+
     } //question: utile ?
 
 

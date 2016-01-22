@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_flags_room_12"
+    tools:showIn="@layout/map_room">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/flag_r12_001"
+        android:background="#00ffffff"
+        android:src="@drawable/flag_default"
+        android:layout_marginLeft="255dp"
+        android:layout_marginTop="130dp" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/flag_r12_002"
+        android:background="#00ffffff"
+        android:src="@drawable/flag_default"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="425dp" />
+</FrameLayout>

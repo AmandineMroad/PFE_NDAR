@@ -1,6 +1,8 @@
 package polytech.pfe_ndar.object;
 
 import android.app.Activity;
+import android.content.res.Resources;
+import android.content.res.TypedArray;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.view.View;
@@ -10,7 +12,6 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-import polytech.pfe_ndar.util.MapTools;
 import polytech.pfe_ndar.util.listeners.MapOnClickListener;
 
 
@@ -22,37 +23,40 @@ public class Room {
     private final ImageButton button; //button associated with this room on the global map
     private ArrayList<Flag> flagsSet; //set of all flags (pieces) included in this room
     private final int drawable; //image displayed in detailed map
+    private final int layout_flags; //id of layout which contains the flags imageButton
     private final int number; //question : inutile au final ? accès via index
     private ImageView roomFlag; //image of marked flag for global map
 
     /**
      * Room constructor
-     *
-     * @param number:       the number of the room (int)
+     *  @param number :       the number of the room (int)
      * @param activity      : the activity which call the constructor (MapActivity)
      * @param imageButtonID : id of the button associated with this room on the global map
      * @param drawableResID : id of the image displayed in detailed map
-     * @param roomFlagID    : id of the image of marked flag for global map
+     * @param layoutID      : id of the layout which contains the flags imageButton on detailed map
+     * @param roomFlagID    : id of the imageView of marked flag for global map
      */
-    public Room(int number, Activity activity, @IdRes int imageButtonID, @DrawableRes int drawableResID, @IdRes int roomFlagID) {
+    public Room(int number, Activity activity, @IdRes int imageButtonID, @DrawableRes int drawableResID, @IdRes int layoutID, @IdRes int roomFlagID) {
         this.number = number;
         this.flagsSet = new ArrayList<>();
         this.drawable = drawableResID;
+        this.layout_flags = layoutID;
         this.button = (ImageButton) activity.findViewById(imageButtonID);
         this.roomFlag = (ImageView) activity.findViewById(roomFlagID);
-        button.setOnClickListener(new MapOnClickListener(this, activity));
+        if (button != null) //TMP
+            button.setOnClickListener(new MapOnClickListener(this, activity));
 
-        //TMP
-        Flag tmp = new Flag(null, new Piece(12));
-        flagsSet.add(tmp);
-        MapTools.setLastSeen(tmp);
-        //TMP fin
+
         //TODO init flags !
     }
 
     /***********************************************
      * Accessors
      ***********************************************/
+    public int getNumber(){
+        return number;
+    }
+
     public ImageButton getButton() {
         return button;
     }
@@ -66,6 +70,10 @@ public class Room {
     }
     public void addFlag(Flag flag) {
         flagsSet.add(flag);
+    }
+
+    public @IdRes int getFlagLayoutID(){
+        return layout_flags;
     }
 
     /***********************************************
@@ -100,6 +108,27 @@ public class Room {
         imageViewLayoutParams.setMargins(x, y, 0, 0);
 
         imageView.setVisibility(View.VISIBLE);
+    }
+
+    public final void initFlags(Activity activity, TypedArray roomContent){
+        int numberOfPieces = roomContent.length();
+        Resources resources = activity.getResources();
+
+        TypedArray objectData = null;
+        int i,j;
+        Piece piece;
+        Flag flag;
+        ImageButton imageButton;
+        for (i = 0; i< numberOfPieces; i++){
+            objectData = resources.obtainTypedArray(roomContent.getResourceId(i, 0));
+
+            piece = new Piece(this.number, objectData.getNonResourceString(1), objectData.getNonResourceString(2));
+
+            imageButton = (ImageButton) activity.findViewById(objectData.getResourceId(0,0));
+            flag = new Flag(imageButton, piece);
+            flagsSet.add(flag);
+        }
+
     }
 
 }

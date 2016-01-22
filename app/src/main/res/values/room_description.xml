@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    /!\ SYNTAX /!\
+    <array name="infos_roomX">
+        <item>@id/roomX</item>
+        <item>@drawable/roomX</item>
+        <item>@id/layout_flags_room_X</item>
+        <item>@id/map_global_flagX</item>
+        <item>@array/room_content_X</item>
+    </array>
+    -->
+    <array name="infos_room1"></array>
+    <array name="infos_room2"></array>
+    <array name="infos_room3"></array>
+    <array name="infos_room4"></array>
+    <array name="infos_room5"></array>
+    <array name="infos_room6"></array>
+    <array name="infos_room7"></array>
+    <array name="infos_room8"></array>
+    <array name="infos_room9"></array>
+    <array name="infos_room10"></array>
+    <array name="infos_room11"></array>
+    <array name="infos_room12">
+        <item>@id/room12</item>
+        <item>@drawable/room12</item>
+        <item>@id/layout_flags_room_12</item>
+        <item>@id/map_global_flag12</item>
+        <item>@array/room_content_12</item>
+    </array>
+    <array name="infos_room13"></array>
+</resources>

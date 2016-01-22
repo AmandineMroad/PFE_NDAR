@@ -9,7 +9,8 @@
 
     <string name="pop_up_object_message">Access to this object ?</string>
 
-    <string name="title_activity_fullscreen">FullscreenActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="object_12001_description"> An amazing object from room 12</string>
+
+
 </resources>

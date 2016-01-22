@@ -8,9 +8,15 @@ public class Piece{
     //TODO un identifiant unique
 
     private final int room;
+    private final String name;
+    private final String description;
 
-    Piece(int roomNumber){
+
+    Piece(int roomNumber, String name, String description){
         this.room = roomNumber;
+        this.name = name;
+        this.description = description;
+
     }
 
     public int getRoom(){
