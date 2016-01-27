@@ -26,14 +26,14 @@ public class Obj3DRenderer extends RendererActivity {
             myLight.position.setZ(150);
             scene.lights().add(myLight);
 
-            IParser myParser = Parser.createParser(Parser.Type.OBJ, getResources(), "com.demo.oirled.delph3dviewer:raw/face_obj", true);
+            IParser myParser = Parser.createParser(Parser.Type.OBJ, getResources(), "polytech.pfe_ndar:raw/ceteredtorso_obj", true);
             myParser.parse();
 
             faceObject3D = myParser.getParsedObject();
             faceObject3D.position().x = faceObject3D.position().y = faceObject3D.position().z = 0;
             faceObject3D.scale().x = faceObject3D.scale().y = faceObject3D.scale().z = 1.0f;
 // Depending on the model you will need to change the scale
-            faceObject3D.scale().x = faceObject3D.scale().y = faceObject3D.scale().z = 1.0f;
+        //    faceObject3D.scale().x = faceObject3D.scale().y = faceObject3D.scale().z = 1.0f;
 
             scene.addChild(faceObject3D);
 
