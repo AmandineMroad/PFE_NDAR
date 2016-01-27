@@ -5,6 +5,8 @@ package polytech.pfe_ndar.objdisplaytools.views;
  */
 
 
+import android.view.MotionEvent;
+
 import polytech.pfe_ndar.objdisplaytools.min3d.core.Object3dContainer;
 import polytech.pfe_ndar.objdisplaytools.min3d.core.RendererActivity;
 import polytech.pfe_ndar.objdisplaytools.min3d.parser.IParser;
@@ -14,7 +16,10 @@ import polytech.pfe_ndar.objdisplaytools.min3d.vos.Light;
 public class Obj3DRenderer extends RendererActivity {
 
         private Object3dContainer faceObject3D;
-
+        float touchedX = 0;
+        float touchedY = 0;
+          float xAngle= 0;
+            float yAngle=0;
         /** Called when the activity is first created. */
         @Override
         public void initScene()
@@ -38,10 +43,26 @@ public class Obj3DRenderer extends RendererActivity {
             scene.addChild(faceObject3D);
 
         }
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        if (event.getAction() == MotionEvent.ACTION_DOWN)
+        {
+            touchedX = event.getX();
+            touchedY = event.getY();
+        } else if (event.getAction() == MotionEvent.ACTION_MOVE)
+        {
+            xAngle += (touchedX - event.getX())/2f;
+            yAngle += (touchedY - event.getY())/2f;
 
+            touchedX = event.getX();
+            touchedY = event.getY();
+        }
+        return true;
+
+    }
         @Override
         public void updateScene() {
-            faceObject3D.rotation().x += 0.5;
-            faceObject3D.rotation().z += 1;
+            faceObject3D.rotation().x = xAngle;
+            faceObject3D.rotation().z = yAngle;
         }
 }
