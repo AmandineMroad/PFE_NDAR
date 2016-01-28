@@ -13,6 +13,7 @@
     <string name="pop_up_neutral_remove">Remove from "Must see"</string>
 
     <string name="object_12001_description"> An amazing object from room 12</string>
+    <string name="title_activity_viewer3dcontainer">viewer3dcontainer</string>
 
 
 </resources>
