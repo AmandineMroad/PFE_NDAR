@@ -24,11 +24,16 @@ public class Obj3DRenderer extends RendererActivity {
         @Override
         public void initScene()
         {
-            scene.lights().add(new Light());
-            scene.lights().add(new Light());
+            //scene.lights().add(new Light());
+           // scene.lights().add(new Light());
 
             Light myLight = new Light();
-            myLight.position.setZ(150);
+            myLight.diffuse.setAll(10,100,120,100);
+            myLight.ambient.setAll(0,0,0,0);
+            myLight.specular.setAll(0,0,0,0);
+            myLight.emissive.setAll(0, 0, 0, 0);
+            myLight.position.setY(-400);
+
             scene.lights().add(myLight);
 
             IParser myParser = Parser.createParser(Parser.Type.OBJ, getResources(), "polytech.pfe_ndar:raw/ceteredtorso_obj", true);
@@ -36,7 +41,7 @@ public class Obj3DRenderer extends RendererActivity {
 
             faceObject3D = myParser.getParsedObject();
             faceObject3D.position().x = faceObject3D.position().y = faceObject3D.position().z = 0;
-            faceObject3D.scale().x = faceObject3D.scale().y = faceObject3D.scale().z = 1.0f;
+            faceObject3D.scale().x = faceObject3D.scale().y = faceObject3D.scale().z = 0.7f;
 // Depending on the model you will need to change the scale
         //    faceObject3D.scale().x = faceObject3D.scale().y = faceObject3D.scale().z = 1.0f;
 
