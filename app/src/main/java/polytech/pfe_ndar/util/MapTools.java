@@ -103,7 +103,7 @@ public class MapTools {
      * Display flags on global map on rooms in which there is a marked piece or the last seen piece
      */
     public static void setRoomsGlobalFlags() {
-        //FIXME
+        //FIXME DONE je crois
         for (Room room : rooms) {
             if (room != null) {//TMP
                 if (room.containsMarkedFlags()) {

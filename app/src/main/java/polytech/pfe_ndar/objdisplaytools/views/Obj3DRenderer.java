@@ -42,7 +42,7 @@ public class Obj3DRenderer extends RendererActivity {
 
             scene.lights().add(myLight);
 
-            IParser myParser = Parser.createParser(Parser.Type.OBJ, getResources(), "polytech.pfe_ndar:raw/ceteredtorso_obj", true);
+            IParser myParser = Parser.createParser(Parser.Type.OBJ, getResources(), "polytech.pfe_ndar:raw/busthead_obj", true);
             myParser.parse();
 
             faceObject3D = myParser.getParsedObject();
