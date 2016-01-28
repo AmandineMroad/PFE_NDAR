@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 
+import polytech.pfe_ndar.objdisplaytools.views.Obj3DRenderer;
 import polytech.pfe_ndar.util.ScreenTools;
 
 /*
@@ -20,6 +21,7 @@ QUESTION News ?
 
 public class MainActivity extends AppCompatActivity {
     Intent mapIntent;
+    Intent intent3d;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +32,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Create the intent for global map activity
         mapIntent = new Intent(this, MapActivity.class);
-
+        intent3d = new Intent(this, Obj3DRenderer.class);
         //TMP map launcher
         Button buttonMap = (Button) findViewById(R.id.button_home_map);
         buttonMap.setOnClickListener(buttonMapListener);
+
+        Button button3D = (Button) findViewById(R.id.button3D);
+        button3D.setOnClickListener(but3dLis);
+
 
         //TMP affiche les dimensions de l'écran (en dp)
         TextView textView = (TextView) findViewById(R.id.homeTextView);
@@ -52,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
     };
 
 
+    OnClickListener but3dLis = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            startActivity(intent3d);
+        }
+    };
 
 
 }
