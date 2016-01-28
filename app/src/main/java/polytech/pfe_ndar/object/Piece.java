@@ -22,5 +22,7 @@ public class Piece{
     public int getRoom(){
         return room;
     }
+    public String getName (){return name;}
+    public String getDescription(){return  description;}
 
 }

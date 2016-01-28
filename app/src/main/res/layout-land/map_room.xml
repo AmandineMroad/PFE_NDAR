@@ -13,30 +13,5 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" />
 
-    <include layout="@layout/layout_flags_room_1" />
-
-    <include layout="@layout/layout_flags_room_2" />
-
-    <include layout="@layout/layout_flags_room_3" />
-
-    <include layout="@layout/layout_flags_room_4" />
-
-    <include layout="@layout/layout_flags_room_5" />
-
-    <include layout="@layout/layout_flags_room_6" />
-
-    <include layout="@layout/layout_flags_room_7" />
-
-    <include layout="@layout/layout_flags_room_8" />
-
-    <include layout="@layout/layout_flags_room_9" />
-
-    <include layout="@layout/layout_flags_room_10" />
-
-    <include layout="@layout/layout_flags_room_11" />
-
-    <include layout="@layout/layout_flags_room_12" />
-
-    <include layout="@layout/layout_flags_room_13" />
 
 </RelativeLayout>

@@ -8,7 +8,9 @@
     <string name="fav_delete">Remove from "To see"</string>
 
     <string name="pop_up_object_message">Access to this object ?</string>
-
+    <string name="pop_up_neutral_seen">Already seen</string>
+    <string name="pop_up_neutral_add">Add to "Must see"</string>
+    <string name="pop_up_neutral_remove">Remove from "Must see"</string>
 
     <string name="object_12001_description"> An amazing object from room 12</string>
 

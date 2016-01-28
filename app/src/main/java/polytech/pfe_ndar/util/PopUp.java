@@ -6,30 +6,25 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 
 import polytech.pfe_ndar.R;
+import polytech.pfe_ndar.object.Flag;
 
 /**
  * PFE_NDAR _ Polytech Marseille _ 2016
  * Nicolas DELRIO, Amandine ROGER, IRM 2016
  */
 public class PopUp extends DialogFragment{
-    String titleText;
-    String messageText;
-   /* String buttonPositiveText;
-    String buttonNegativeText;
-    String buttonNeutralText;*/
+    Flag flag;
 
-
-    public static PopUp newInstance(String title, String message) {
-
+    public static PopUp newInstance(Flag flag) {
         Bundle args = new Bundle();
+        PopUp popUp = new PopUp();
+        popUp.flag = flag;
+        popUp.setArguments(args);
 
-        PopUp fragment = new PopUp();
-        fragment.titleText = title;
-        fragment.messageText = message;
-        fragment.setArguments(args);
-        return fragment;
+        return popUp;
     }
 
 
@@ -56,16 +51,30 @@ public class PopUp extends DialogFragment{
 
 
     public Dialog onCreateDialog(Bundle savedInstanceState){
-        return new AlertDialog.Builder(getActivity())
+        AlertDialog dialog =  new AlertDialog.Builder(getActivity())
                /* .setMessage("Boite de dialogue super swaggy ! ")*/
-                .setTitle(titleText)
-                .setMessage(messageText)
+                .setTitle(flag.getPiece().getName())
+                .setMessage(R.string.pop_up_object_message)
                 .setPositiveButton(R.string.yes,lis )
                 .setNegativeButton(R.string.no, lis)
-                .setNeutralButton(R.string.fav_add, lis)
+                .setNeutralButton(R.string.pop_up_neutral_add, lis)
                 .create();
+
+        setNeutralButtonContent(dialog);
+
+        return dialog;
+
     }
 
 
+    public void setNeutralButtonContent(Dialog popup){
+        Button button = ((AlertDialog) popup).getButton(DialogInterface.BUTTON_NEUTRAL);
+        if (flag.isKnown()) {
+            button.setText(R.string.pop_up_neutral_seen);
+            button.setClickable(false);
+        } else if (flag.isMarked()){
+            button.setText(R.string.pop_up_neutral_remove);
+        }
+    }
 
 }

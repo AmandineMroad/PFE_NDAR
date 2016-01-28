@@ -3,7 +3,6 @@ package polytech.pfe_ndar.util.listeners;
 import android.app.Activity;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 
 import polytech.pfe_ndar.R;
 import polytech.pfe_ndar.object.Room;
@@ -16,24 +15,29 @@ import polytech.pfe_ndar.util.MapTools;
 public class MapOnClickListener implements View.OnClickListener {
     Room room;
     Activity activity;
+    boolean first;
 
     public MapOnClickListener(Room room, Activity activity){
         this.room = room;
         this.activity = activity;
+        first = true;
     }
 
 
     @Override
     public void onClick(View v) {
-        activity.setContentView(R.layout.map_room);
-        ImageView imageView = (ImageView) activity.findViewById(R.id.map_room_imageView);
-        imageView.setImageResource(room.getDrawable());
+        //activity.setContentView(R.layout.map_room);
+        //activity.setContentView(MapTools.getLayoutForRoom(room.getNumber()));
+        activity.setContentView(R.layout.layout_flags_room_12);
 
-        //Display flags layout
-        MapTools.displayFlagLayout(room.getNumber());
-        Log.w("MAP OnClick Listener", "On click end");
-        //TODO setFlags()
+        if (first) {
+            first = false; //TODO verifier nbre d'appel
+            MapTools.initDetailledRoom(room.getNumber());
 
+        }
+
+        //TODO set flags
+        Log.w("MapListener", "on click performed");
 
     }
 }

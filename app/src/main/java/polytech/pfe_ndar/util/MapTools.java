@@ -1,12 +1,12 @@
 package polytech.pfe_ndar.util;
 
 import android.app.Activity;
-import android.app.DialogFragment;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import polytech.pfe_ndar.R;
 import polytech.pfe_ndar.object.Flag;
 import polytech.pfe_ndar.object.Room;
+import polytech.pfe_ndar.util.listeners.FlagOnClickListener;
 
 /**
  * PFE_NDAR _ Polytech Marseille _ 2016
@@ -71,7 +72,7 @@ public class MapTools {
     private static final int GLOBAL_FLAG_INDEX = 3 ;
     private static final int ROOM_CONTENT_INDEX = 4;
 
-    private static final void initRooms() {
+    private static void initRooms() {
         //Get the construction typed array
         Resources resources = mapActivity.getResources();
         TypedArray constructionData = resources.obtainTypedArray(R.array.map_construction);
@@ -90,13 +91,26 @@ public class MapTools {
                         roomData.getResourceId(LAYOUT_INDEX, 0),roomData.getResourceId(GLOBAL_FLAG_INDEX, 0) );
                 //Add all flags
                 room.initFlags(mapActivity, resources.obtainTypedArray(roomData.getResourceId(ROOM_CONTENT_INDEX, 0)));
-            } else {
-                room = null;
             }
             //Store room
             rooms.add(i, room);
         }
     }
+
+
+    public static void initDetailledRoom(int roomNumber){
+        Room room = rooms.get(roomNumber - 1);
+        ArrayList<Flag> flags = room.getFlagsSet();
+        ImageButton button;
+        for (Flag flag : flags){
+            button = (ImageButton) mapActivity.findViewById(flag.getButtonID());
+            button.setOnClickListener(new FlagOnClickListener(flag, mapActivity));
+        }
+
+        Log.w("InitDetailledRoom", "init done");
+
+    }
+
 
 
     /***********************************************
@@ -149,11 +163,9 @@ public class MapTools {
         layout.setVisibility(View.INVISIBLE);
     }
 
-    /*****************************************************************************/
-//TMP déplacer ? dans mapActivity peut etre ?
-    public static void showPopUp(Activity activity, String dialogMessage) { //FIXME
-        DialogFragment dialogFragment = PopUp.newInstance("FROM MAP", dialogMessage);
-        dialogFragment.show(activity.getFragmentManager(), "FROM MAP");
+    public static FrameLayout getLayoutForRoom(int roomNumber){
+        FrameLayout layout = (FrameLayout) mapActivity.findViewById(rooms.get(roomNumber - 1).getFlagLayoutID());
+        return  layout;
     }
 
 

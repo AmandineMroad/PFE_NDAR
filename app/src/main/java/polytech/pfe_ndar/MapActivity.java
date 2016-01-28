@@ -18,6 +18,7 @@ public class MapActivity extends AppCompatActivity {
 
         //map initialization
         MapTools.initMap(this);
+
     }
 
     protected void onResume(){
@@ -25,11 +26,7 @@ public class MapActivity extends AppCompatActivity {
         MapTools.setRoomsGlobalFlags();
     }
 
-    protected void showDial(String message){
-        MapTools.showPopUp(this, message);
 
-
-    } //question: utile ?
 
 
 }

@@ -7,11 +7,13 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
 
+import polytech.pfe_ndar.R;
 import polytech.pfe_ndar.util.listeners.MapOnClickListener;
 
 
@@ -64,6 +66,9 @@ public class Room {
     public int getDrawable() {
         return drawable;
     }
+    public int getLayout() {
+        return layout_flags;
+    }
 
     public ArrayList<Flag> getFlagsSet() {
         return flagsSet;
@@ -114,18 +119,25 @@ public class Room {
         int numberOfPieces = roomContent.length();
         Resources resources = activity.getResources();
 
-        TypedArray objectData = null;
+
+
+      //  FrameLayout layout = (FrameLayout) View.inflate(activity.getApplicationContext(), R.layout.layout_flags_room_12, null);//FIXME layout
+        FrameLayout layout = (FrameLayout) View.inflate(activity.getApplicationContext(), R.layout.layout_flags_room_12, null);
+        TypedArray objectData;
         int i,j;
         Piece piece;
         Flag flag;
         ImageButton imageButton;
+        //pieces/flags initialization loop
         for (i = 0; i< numberOfPieces; i++){
+            //getting object description array
             objectData = resources.obtainTypedArray(roomContent.getResourceId(i, 0));
+            //create piece
+            piece = new Piece(this.number, objectData.getNonResourceString(1), objectData.getNonResourceString(2)); //TODO intégrer autres attributs de piece
 
-            piece = new Piece(this.number, objectData.getNonResourceString(1), objectData.getNonResourceString(2));
-
-            imageButton = (ImageButton) activity.findViewById(objectData.getResourceId(0,0));
-            flag = new Flag(imageButton, piece);
+            imageButton = (ImageButton) layout.findViewById(objectData.getResourceId(0,0));
+           // flag = new Flag(imageButton, piece, activity ); //FIXME
+            flag = new Flag(objectData.getResourceId(0,0), piece, activity );
             flagsSet.add(flag);
         }
 
