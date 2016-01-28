@@ -3,17 +3,15 @@ package polytech.pfe_ndar.object;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.support.annotation.DrawableRes;
 import android.support.annotation.IdRes;
+import android.support.annotation.LayoutRes;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-import polytech.pfe_ndar.R;
 import polytech.pfe_ndar.util.listeners.MapOnClickListener;
 
 
@@ -24,8 +22,7 @@ import polytech.pfe_ndar.util.listeners.MapOnClickListener;
 public class Room {
     private final ImageButton button; //button associated with this room on the global map
     private ArrayList<Flag> flagsSet; //set of all flags (pieces) included in this room
-    private final int drawable; //image displayed in detailed map
-    private final int layout_flags; //id of layout which contains the flags imageButton
+    private final @LayoutRes int layout_flags; //id of layout which contains the flags imageButton
     private final int number; //question : inutile au final ? accès via index
     private ImageView roomFlag; //image of marked flag for global map
 
@@ -34,14 +31,12 @@ public class Room {
      *  @param number :       the number of the room (int)
      * @param activity      : the activity which call the constructor (MapActivity)
      * @param imageButtonID : id of the button associated with this room on the global map
-     * @param drawableResID : id of the image displayed in detailed map
      * @param layoutID      : id of the layout which contains the flags imageButton on detailed map
      * @param roomFlagID    : id of the imageView of marked flag for global map
      */
-    public Room(int number, Activity activity, @IdRes int imageButtonID, @DrawableRes int drawableResID, @IdRes int layoutID, @IdRes int roomFlagID) {
+    public Room(int number, Activity activity, @IdRes int imageButtonID, @LayoutRes int layoutID, @IdRes int roomFlagID) {
         this.number = number;
         this.flagsSet = new ArrayList<>();
-        this.drawable = drawableResID;
         this.layout_flags = layoutID;
         this.button = (ImageButton) activity.findViewById(imageButtonID);
         this.roomFlag = (ImageView) activity.findViewById(roomFlagID);
@@ -63,9 +58,7 @@ public class Room {
         return button;
     }
 
-    public int getDrawable() {
-        return drawable;
-    }
+
     public int getLayout() {
         return layout_flags;
     }
@@ -77,7 +70,7 @@ public class Room {
         flagsSet.add(flag);
     }
 
-    public @IdRes int getFlagLayoutID(){
+    public @LayoutRes int getFlagLayoutID(){
         return layout_flags;
     }
 
@@ -118,12 +111,10 @@ public class Room {
     public final void initFlags(Activity activity, TypedArray roomContent){
         int numberOfPieces = roomContent.length();
         Resources resources = activity.getResources();
-
-
-
-      //  FrameLayout layout = (FrameLayout) View.inflate(activity.getApplicationContext(), R.layout.layout_flags_room_12, null);//FIXME layout
-        FrameLayout layout = (FrameLayout) View.inflate(activity.getApplicationContext(), R.layout.layout_flags_room_12, null);
+//        FrameLayout layout = (FrameLayout) View.inflate(activity.getApplicationContext(), R.layout.layout_flags_room_12, null);//FIXME layout
+//        FrameLayout layout = (FrameLayout) View.inflate(activity.getApplicationContext(), layout_flags, null);
         TypedArray objectData;
+//        FrameLayout layout = (FrameLayout) activity.getLayoutInflater().inflate( layout_flags, null);
         int i,j;
         Piece piece;
         Flag flag;
@@ -133,9 +124,9 @@ public class Room {
             //getting object description array
             objectData = resources.obtainTypedArray(roomContent.getResourceId(i, 0));
             //create piece
-            piece = new Piece(this.number, objectData.getNonResourceString(1), objectData.getNonResourceString(2)); //TODO intégrer autres attributs de piece
-
-            imageButton = (ImageButton) layout.findViewById(objectData.getResourceId(0,0));
+            piece = new Piece(this.number, objectData.getString(1), objectData.getString(2));//TODO intégrer autres attributs de piece
+//TODO propre
+            //imageButton = (ImageButton) layout.findViewById(objectData.getResourceId(0,0));
            // flag = new Flag(imageButton, piece, activity ); //FIXME
             flag = new Flag(objectData.getResourceId(0,0), piece, activity );
             flagsSet.add(flag);

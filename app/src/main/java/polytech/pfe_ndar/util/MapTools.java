@@ -5,7 +5,6 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.Log;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -67,10 +66,9 @@ public class MapTools {
      * Create rooms and their content and store them
      */
     private static final int IMAGE_BUTTON_INDEX = 0;
-    private static final int DRAWABLE_INDEX = 1;
-    private static final int LAYOUT_INDEX = 2;
-    private static final int GLOBAL_FLAG_INDEX = 3 ;
-    private static final int ROOM_CONTENT_INDEX = 4;
+    private static final int LAYOUT_INDEX = 1;
+    private static final int GLOBAL_FLAG_INDEX = 2 ;
+    private static final int ROOM_CONTENT_INDEX = 3;
 
     private static void initRooms() {
         //Get the construction typed array
@@ -87,7 +85,7 @@ public class MapTools {
             //TMP if tmp à supprimer
             if(roomData.length() > 0) {
                 //Create room
-                room = new Room(i + 1, mapActivity, roomData.getResourceId(IMAGE_BUTTON_INDEX, 0), roomData.getResourceId(DRAWABLE_INDEX, 0),
+                room = new Room(i + 1, mapActivity, roomData.getResourceId(IMAGE_BUTTON_INDEX, 0),
                         roomData.getResourceId(LAYOUT_INDEX, 0),roomData.getResourceId(GLOBAL_FLAG_INDEX, 0) );
                 //Add all flags
                 room.initFlags(mapActivity, resources.obtainTypedArray(roomData.getResourceId(ROOM_CONTENT_INDEX, 0)));
@@ -96,22 +94,6 @@ public class MapTools {
             rooms.add(i, room);
         }
     }
-
-
-    public static void initDetailledRoom(int roomNumber){
-        Room room = rooms.get(roomNumber - 1);
-        ArrayList<Flag> flags = room.getFlagsSet();
-        ImageButton button;
-        for (Flag flag : flags){
-            button = (ImageButton) mapActivity.findViewById(flag.getButtonID());
-            button.setOnClickListener(new FlagOnClickListener(flag, mapActivity));
-        }
-
-        Log.w("InitDetailledRoom", "init done");
-
-    }
-
-
 
     /***********************************************
      * Global map management
@@ -131,7 +113,6 @@ public class MapTools {
                 }
             }
         }
-
         //Setting last flag
         if (lastSeen != null) rooms.get(lastSeen.getRoomNumber() - 1).setRoomLastFlag(roomLastFlag);
 
@@ -140,33 +121,19 @@ public class MapTools {
     /***********************************************
      * Detailed map management
      ***********************************************/
-    public static void hideAllFlagsLayout(){
-        FrameLayout layout;
-        for (Room room : rooms){
-            if ((room != null) && (room.getFlagLayoutID() != 0)  ) {//TMP
-                layout = (FrameLayout) mapActivity.findViewById(room.getFlagLayoutID());
-                layout.setVisibility(View.INVISIBLE);
-            }
+    public static void initDetailledRoom(int roomNumber){
+        Room room = rooms.get(roomNumber - 1);
+        ArrayList<Flag> flags = room.getFlagsSet();
+        ImageButton button;
+        for (Flag flag : flags){
+            button = (ImageButton) mapActivity.findViewById(flag.getButtonID());
+            button.setOnClickListener(new FlagOnClickListener(flag, mapActivity));
         }
+
+        Log.w("InitDetailledRoom", "init done");
+
     }
 
-    public static void displayFlagLayout(int roomNumber){
-        hideAllFlagsLayout();
-        //rooms.get(roomNumber-1).getFlagLayout().setVisibility(View.VISIBLE);
-        FrameLayout layout = (FrameLayout) mapActivity.findViewById(rooms.get(roomNumber - 1).getFlagLayoutID());
-        layout.setVisibility(View.VISIBLE);
-
-        Log.w("DISPLAY FLAG LAYOUT", "passed !"); //TMP
-    }
-    public static void  hideFlagLayout(int roomNumber){
-        FrameLayout layout = (FrameLayout) mapActivity.findViewById(rooms.get(roomNumber-1).getFlagLayoutID());
-        layout.setVisibility(View.INVISIBLE);
-    }
-
-    public static FrameLayout getLayoutForRoom(int roomNumber){
-        FrameLayout layout = (FrameLayout) mapActivity.findViewById(rooms.get(roomNumber - 1).getFlagLayoutID());
-        return  layout;
-    }
 
 
 
