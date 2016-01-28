@@ -15,6 +15,7 @@ import android.content.Intent;
 import java.io.Console;
 
 import polytech.pfe_ndar.R;
+import polytech.pfe_ndar.object.Piece;
 
 public class Activity3D extends AppCompatActivity {
     /** Called when the activity is first created. */
