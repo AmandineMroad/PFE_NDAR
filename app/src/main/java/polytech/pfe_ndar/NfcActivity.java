@@ -17,8 +17,9 @@ import java.io.UnsupportedEncodingException;
  */
 public class NfcActivity extends AppCompatActivity {
     NfcAdapter mAdapter;
-
+    byte currentId;
     public void onCreate(Bundle savedInstanceState){
+        Log.d("NFC READINGS","NFCACTIVITY CREATED");
     super.onCreate(savedInstanceState);
     mAdapter=NfcAdapter.getDefaultAdapter(this);
     resolveIntent(getIntent());
@@ -30,24 +31,16 @@ public class NfcActivity extends AppCompatActivity {
     }
     void resolveIntent(Intent intent)
     {
-        Log.d("test", "niqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUEniqueNIQUE");
 
         String action = intent.getAction();
+        Log.d("NFC READINGS", "Action recupereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
         if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action)) {
-            Parcelable[] rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_NDEF_MESSAGES);
+            byte[] idmain = intent.getByteArrayExtra(NfcAdapter.EXTRA_ID);
+          //  Parcelable[] rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_ID);
+            currentId=idmain[0];
             NdefMessage[] messages;
-            if (rawMsgs != null) {
-                messages = new NdefMessage[rawMsgs.length];
-                for (int i = 0; i < rawMsgs.length; i++) {
-                    messages[i] = (NdefMessage) rawMsgs[i];
-                    NdefRecord record = messages[i].getRecords()[i];
-                    byte[] id = record.getId();
-                    short tnf = record.getTnf();
-                    byte[] type = record.getType();
+            Log.d("NFC READINGS", "action tostring=" + action+ " ID="+idmain);
 
-                    String message = getTextData(record.getPayload());
-                }
-            }
         } else {
             finish();
             return;

@@ -16,7 +16,6 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -26,17 +25,19 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".NfcActivity"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".objdisplaytools.views.Obj3DRenderer"
             android:label="@string/app_name"></activity>
         <activity
             android:name=".objdisplaytools.views.Activity3D"
             android:label="@string/app_name">
-            <intent-filter>
-            <action android:name="android.nfc.action.TAG_DISCOVERED"/>
-            <category android:name="android.intent.category.DEFAULT"/>
-        </intent-filter>
+
         </activity>
     </application>
 
