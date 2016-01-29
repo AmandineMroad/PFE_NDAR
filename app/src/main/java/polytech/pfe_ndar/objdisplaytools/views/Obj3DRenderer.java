@@ -15,6 +15,7 @@ import polytech.pfe_ndar.objdisplaytools.min3d.core.RendererActivity;
 import polytech.pfe_ndar.objdisplaytools.min3d.parser.IParser;
 import polytech.pfe_ndar.objdisplaytools.min3d.parser.Parser;
 import polytech.pfe_ndar.objdisplaytools.min3d.vos.Light;
+import polytech.pfe_ndar.object.Piece;
 
 public class Obj3DRenderer extends RendererActivity {
     //TMP pour tester
@@ -42,7 +43,7 @@ public class Obj3DRenderer extends RendererActivity {
             Light myLight = new Light();
             myLight.diffuse.setAll(50,100,120,100);
             myLight.ambient.setAll(0,0,0,0);
-            myLight.specular.setAll(0, 0, 0, 0);
+            myLight.specular.setAll(0,0,0,0);
             myLight.emissive.setAll(0, 0, 0, 0);
             myLight.position.setZ(400);
             myLight.position.setY(400);

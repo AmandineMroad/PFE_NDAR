@@ -1,5 +1,6 @@
 package polytech.pfe_ndar.objdisplaytools.views;
 
+import android.app.PendingIntent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ActionBar;
@@ -18,17 +19,20 @@ import polytech.pfe_ndar.R;
 import polytech.pfe_ndar.object.Piece;
 
 public class Activity3D extends AppCompatActivity {
+
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 
-        Log.d("TTEST", "test");
+        Log.d("TEST", "test");
         Toolbar toolbar = new Toolbar(this);
         toolbar.setTitle("Test");
         setSupportActionBar(toolbar);
-        this.startActivity( new Intent(this,Obj3DRenderer.class));
+       // this.startActivity( new Intent(this,Obj3DRenderer.class));
     }
+
+
 
 }

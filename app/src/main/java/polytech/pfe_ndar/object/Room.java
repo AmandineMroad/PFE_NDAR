@@ -85,10 +85,14 @@ public class Room {
     }
 
     public void displayRoomFlag() {
-        roomFlag.setVisibility(View.VISIBLE);
+        if(roomFlag!=null) {
+            roomFlag.setVisibility(View.VISIBLE);
+        }
     }
     public void hideRoomFlag() {
-        roomFlag.setVisibility(View.INVISIBLE);
+        if(roomFlag!=null) {
+            roomFlag.setVisibility(View.INVISIBLE);
+        }
     }
 
     /**

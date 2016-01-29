@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="polytech.pfe_ndar">
 
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.NFC" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,12 +24,24 @@
         <activity
             android:name=".MapActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name=".NfcActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.nfc.action.TAG_DISCOVERED" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".objdisplaytools.views.Obj3DRenderer"
             android:label="@string/app_name"/>
 
         <activity android:name=".MenuActivity"/>
+            android:label="@string/app_name" />
+        <activity
+            android:name=".objdisplaytools.views.Activity3D"
+            android:label="@string/app_name"></activity>
     </application>
 
 </manifest>
