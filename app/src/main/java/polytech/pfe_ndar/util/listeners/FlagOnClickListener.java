@@ -19,7 +19,8 @@ public class FlagOnClickListener implements View.OnClickListener {
     public FlagOnClickListener(Flag flag, Activity activity){
         this.flag = flag;
         this.activity = activity;
-        this.popUp = PopUp.newInstance(flag);
+//        this.popUp = PopUp.newInstance(flag);
+        this.popUp = PopUp.newInstance(flag, activity);
     }
 
     @Override

@@ -7,13 +7,14 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:text="Option 1"
-        android:id="@+id/option1"
+        android:id="@+id/menu_button_3d"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
-        android:background="#c52b2b" />
+        android:background="#ffffff"
+        android:src="@drawable/menu_icon_3d" />
 
     <ImageButton
         android:layout_width="160dp"
@@ -32,9 +33,9 @@
         android:layout_height="160dp"
         android:text="Option 3"
         android:id="@+id/option3"
-        android:layout_below="@+id/option1"
-        android:layout_alignLeft="@+id/option1"
-        android:layout_alignStart="@+id/option1"
+        android:layout_below="@+id/menu_button_3d"
+        android:layout_alignLeft="@+id/menu_button_3d"
+        android:layout_alignStart="@+id/menu_button_3d"
         android:layout_marginTop="5dp"
         android:background="#ff9900" />
 

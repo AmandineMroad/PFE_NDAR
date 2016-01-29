@@ -124,8 +124,9 @@ public class Room {
             //getting object description array
             objectData = resources.obtainTypedArray(roomContent.getResourceId(i, 0));
             //create piece
-            piece = new Piece(this.number, objectData.getString(1), objectData.getString(2));//TODO intégrer autres attributs de piece
+//            piece = new Piece(this.number, objectData.getString(1), objectData.getString(2));//TODO intégrer autres attributs de piece
 //TODO propre
+            piece = new Piece(this.number, objectData.getString(1), objectData.getString(2),resources.obtainTypedArray(objectData.getResourceId(3,0)));//TODO intégrer autres attributs de piece
             //imageButton = (ImageButton) layout.findViewById(objectData.getResourceId(0,0));
            // flag = new Flag(imageButton, piece, activity ); //FIXME
             flag = new Flag(objectData.getResourceId(0,0), piece, activity );

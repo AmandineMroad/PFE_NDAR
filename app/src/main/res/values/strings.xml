@@ -12,8 +12,28 @@
     <string name="pop_up_neutral_add">Add to "Must see"</string>
     <string name="pop_up_neutral_remove">Remove from "Must see"</string>
 
-    <string name="object_12001_description"> An amazing object from room 12</string>
+
     <string name="title_activity_viewer3dcontainer">viewer3dcontainer</string>
+
+<!-- Object name and description -->
+    <!-- Global -->
+    <string name="menu_3d">3D</string>
+    <string name="menu_audio">audio</string>
+    <string name="menu_assoc">assoc</string>
+    <string name="menu_infos">infos</string>
+        <!-- inutiles ? -->
+    <string name="menu_fav">fav</string>
+    <string name="menu_map">map</string>
+
+
+    <!-- Data -->
+    <string name="object_12001_name"> Object 12_001 </string>
+    <string name="object_12001_description"> An amazing object from room 12</string>
+    <string name="object_12001_raw3D">polytech.pfe_ndar:raw/ceteredtorso_obj</string>
+
+    <string name="object_12002_name"> Object 12_002 </string>
+    <string name="object_12002_description"> Another amazing object from room 12</string>
+    <string name="object_12002_raw3D">polytech.pfe_ndar:raw/busthead_obj</string>
 
 
 </resources>

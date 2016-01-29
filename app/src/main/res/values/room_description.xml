@@ -4,7 +4,6 @@
     /!\ SYNTAX /!\
     <array name="infos_roomX">
         <item>@id/roomX</item>
-        <item>@drawable/roomX</item>
         <item>@id/layout_flags_room_X</item>
         <item>@id/map_global_flagX</item>
         <item>@array/room_content_X</item>
@@ -23,7 +22,6 @@
     <array name="infos_room11"></array>
     <array name="infos_room12">
         <item>@id/room12</item>
-        <item>@drawable/room12</item>
         <item>@id/layout_flags_room_12</item>
         <item>@id/map_global_flag12</item>
         <item>@array/room_content_12</item>

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
+import polytech.pfe_ndar.object.Piece;
+
 /**
  * PFE_NDAR _ Polytech Marseille _ 2016
  * Nicolas DELRIO, Amandine ROGER, IRM 2016
@@ -28,5 +30,8 @@ public final class ScreenTools {
     public static int getScreenDpHeight(){
         return screenDpHeight;
     }
+
+
+    public static void displayMenu(Piece piece){}//TODO
 
 }

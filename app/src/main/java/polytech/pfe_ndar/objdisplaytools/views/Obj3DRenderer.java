@@ -5,6 +5,8 @@ package polytech.pfe_ndar.objdisplaytools.views;
  */
 
 
+import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 
@@ -13,9 +15,15 @@ import polytech.pfe_ndar.objdisplaytools.min3d.core.RendererActivity;
 import polytech.pfe_ndar.objdisplaytools.min3d.parser.IParser;
 import polytech.pfe_ndar.objdisplaytools.min3d.parser.Parser;
 import polytech.pfe_ndar.objdisplaytools.min3d.vos.Light;
-import polytech.pfe_ndar.object.Piece;
 
 public class Obj3DRenderer extends RendererActivity {
+    //TMP pour tester
+    String rawPath;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Bundle extras = getIntent().getExtras();
+        rawPath = extras.getString("raw_path");
+    }
 
         private Object3dContainer faceObject3D;
 
@@ -34,15 +42,21 @@ public class Obj3DRenderer extends RendererActivity {
             Light myLight = new Light();
             myLight.diffuse.setAll(50,100,120,100);
             myLight.ambient.setAll(0,0,0,0);
-            myLight.specular.setAll(0,0,0,0);
+            myLight.specular.setAll(0, 0, 0, 0);
             myLight.emissive.setAll(0, 0, 0, 0);
             myLight.position.setZ(400);
             myLight.position.setY(400);
 
 
             scene.lights().add(myLight);
+            //TMP
+            IParser myParser;
+            if (rawPath != null)  myParser = Parser.createParser(Parser.Type.OBJ, getResources(), rawPath, true);
+            else {
+                myParser = Parser.createParser(Parser.Type.OBJ, getResources(), "polytech.pfe_ndar:raw/ceteredtorso_obj", true);
+                Log.w("3D ERROR : ", "rawPath is null");
+            }
 
-            IParser myParser = Parser.createParser(Parser.Type.OBJ, getResources(), "polytech.pfe_ndar:raw/ceteredtorso_obj", true);
             myParser.parse();
 
             faceObject3D = myParser.getParsedObject();

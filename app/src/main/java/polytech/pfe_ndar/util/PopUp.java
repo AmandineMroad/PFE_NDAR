@@ -1,13 +1,16 @@
 package polytech.pfe_ndar.util;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 
+import polytech.pfe_ndar.MenuActivity;
 import polytech.pfe_ndar.R;
 import polytech.pfe_ndar.object.Flag;
 
@@ -17,6 +20,7 @@ import polytech.pfe_ndar.object.Flag;
  */
 public class PopUp extends DialogFragment{
     Flag flag;
+    Activity activity;
 
     public static PopUp newInstance(Flag flag) {
         Bundle args = new Bundle();
@@ -27,6 +31,15 @@ public class PopUp extends DialogFragment{
         return popUp;
     }
 
+    public static PopUp newInstance(Flag flag, Activity activity) {
+        Bundle args = new Bundle();
+        PopUp popUp = new PopUp();
+        popUp.flag = flag;
+        popUp.activity = activity;
+        popUp.setArguments(args);
+
+        return popUp;
+    }
 
     DialogInterface.OnClickListener lis = new DialogInterface.OnClickListener() {
         @Override
@@ -34,13 +47,21 @@ public class PopUp extends DialogFragment{
             String tag = "lis.onClick() dit : ";
             switch (which){
                 case DialogInterface.BUTTON_POSITIVE:
-                    Log.i(tag, "click on positive button");
+                    Log.w(tag, "click on positive button");
+                    //TODO get menu from flag.piece
+                    //TODO display menu
+                    Intent intent = new Intent(activity.getApplicationContext(), MenuActivity.class);
+//                    intent.putIntegerArrayListExtra("menu_content", flag.getPiece().getMenuArrayList());
+                    intent.putExtra("menu_cont", flag.getPiece().getMenuArray());
+                    Log.i("pop up", "breakpoint");
+                    startActivity(intent);
+
                     break;
                 case DialogInterface.BUTTON_NEGATIVE:
-                    Log.i(tag, "click on negative button");
+                    Log.w(tag, "click on negative button");
                     break;
                 case DialogInterface.BUTTON_NEUTRAL:
-                    Log.i(tag, "click on neutral button");
+                    Log.w(tag, "click on neutral button");
                     break;
             }
         }
