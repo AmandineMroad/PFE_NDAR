@@ -30,10 +30,12 @@
     <string name="object_12001_name"> Object 12_001 </string>
     <string name="object_12001_description"> An amazing object from room 12</string>
     <string name="object_12001_raw3D">polytech.pfe_ndar:raw/ceteredtorso_obj</string>
-
+    <string name="object_12001_Tag">044b4e9a513180</string>
     <string name="object_12002_name"> Object 12_002 </string>
     <string name="object_12002_description"> Another amazing object from room 12</string>
     <string name="object_12002_raw3D">polytech.pfe_ndar:raw/busthead_obj</string>
+    <string name="object_12002_Tag">04115592e63681</string>
+
 
 
 </resources>

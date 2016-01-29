@@ -6,22 +6,35 @@
         <item>@id/flag_rX_Y</item>
         <item>ObjectName</item>
         <item>Description</item>
-        <item>Nfc ID </item>
     </array>
     -->
     <array name="r12_001">
         <item>@id/flag_r12_001</item>
-        <item>Object r12_001</item>
-
-        <item>A very ugly description</item>
-        <item>044b4e9a513180</item>
+        <item>@string/object_12001_name</item>
+        <item>@string/object_12001_description</item>
+        <!--item>@string/object_12001_raw3D</item-->
+        <item>@array/menu_r12001</item>
+        <item>@string/object_12001_Tag</item>
     </array>
+
+    <array name="menu_r12001">
+        <item>@string/menu_3d</item>
+        <item>@string/object_12001_raw3D</item>
+    </array>
+
 
     <array name="r12_002">
         <item>@id/flag_r12_002</item>
-        <item>Object r12_002</item>
-        <item>Another very ugly description</item>
-        <item>04115592e63681</item>
+        <item>@string/object_12002_name</item>
+        <item>@string/object_12002_description</item>
+        <item>@array/menu_r12002</item>
+        <item>@string/object_12002_Tag</item>
+
+    </array>
+
+    <array name="menu_r12002">
+        <item>@string/menu_3d</item>
+        <item>@string/object_12002_raw3D</item>
     </array>
 
 

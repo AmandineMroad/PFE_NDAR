@@ -135,7 +135,7 @@ public class Room {
             //imageButton = (ImageButton) layout.findViewById(objectData.getResourceId(0,0));
            // flag = new Flag(imageButton, piece, activity ); //FIXME
             flag = new Flag(objectData.getResourceId(0,0), piece, activity );
-            tag = new Tag(flag , objectData.getString(3));
+            tag = new Tag(flag , objectData.getString(4));
             flagsSet.add(flag);
         }
 

@@ -14,12 +14,15 @@ import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
 
+import polytech.pfe_ndar.util.PopUp;
+
 /**
  * Created by Oirled on 29/01/2016.
  */
 public class NfcActivity extends AppCompatActivity {
     NfcAdapter mAdapter;
     String currentId;
+    private PopUp popup;
     public void onCreate(Bundle savedInstanceState){
 
         Log.d("NFC READINGS","NFCACTIVITY CREATED");
@@ -52,6 +55,15 @@ public class NfcActivity extends AppCompatActivity {
         }
         TextView textView = (TextView) findViewById(R.id.tagid);
         textView.setText("id= "+currentId);
+
+        for (polytech.pfe_ndar.object.Tag tagcurr : polytech.pfe_ndar.object.Tag.tagSet ) {
+            if(tagcurr.tagID.equals(currentId)){
+                Log.d("OKPOPUP", "FOUNDMATCH"+currentId+"\n Flag : "+ tagcurr.tagFlag.getPiece().getName());
+                popup=PopUp.newInstance(tagcurr.tagFlag, this);
+                popup.show(this.getFragmentManager(),"");
+            }
+        }
+
 
     }
 
