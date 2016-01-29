@@ -122,6 +122,7 @@ public class Room {
         int i,j;
         Piece piece;
         Flag flag;
+        Tag tag;
         ImageButton imageButton;
         //pieces/flags initialization loop
         for (i = 0; i< numberOfPieces; i++){
@@ -134,6 +135,7 @@ public class Room {
             //imageButton = (ImageButton) layout.findViewById(objectData.getResourceId(0,0));
            // flag = new Flag(imageButton, piece, activity ); //FIXME
             flag = new Flag(objectData.getResourceId(0,0), piece, activity );
+            tag = new Tag(flag , objectData.getString(3));
             flagsSet.add(flag);
         }
 

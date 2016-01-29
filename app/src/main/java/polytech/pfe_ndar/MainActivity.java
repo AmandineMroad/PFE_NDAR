@@ -1,14 +1,8 @@
 package polytech.pfe_ndar;
 
-import android.app.PendingIntent;
 import android.content.Intent;
-import android.nfc.NdefMessage;
-import android.nfc.NdefRecord;
-import android.nfc.NfcAdapter;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -39,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         //TMP récupère les dimensions de l'écran en dp
         ScreenTools.init(this);
         // Create the intent for global map activity
-        startActivity(new Intent(this, NfcActivity.class));
+        //startActivity(new Intent(this, NfcActivity.class));
         mapIntent = new Intent(this, MapActivity.class);
         intent3d = new Intent(this, Obj3DRenderer.class);
         //TMP map launcher
@@ -54,8 +48,6 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(" screen size : width = "
                 + ScreenTools.getScreenDpWidth() + " dp   _    height = "
                 + ScreenTools.getScreenDpHeight() + " dp");
-
-
     }
     /* Map launcher */
     OnClickListener buttonMapListener = new OnClickListener() {
