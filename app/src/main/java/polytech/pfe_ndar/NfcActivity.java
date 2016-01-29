@@ -5,10 +5,12 @@ import android.content.Intent;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
+import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
 
@@ -17,10 +19,12 @@ import java.io.UnsupportedEncodingException;
  */
 public class NfcActivity extends AppCompatActivity {
     NfcAdapter mAdapter;
-    byte currentId;
+    String currentId;
     public void onCreate(Bundle savedInstanceState){
+
         Log.d("NFC READINGS","NFCACTIVITY CREATED");
     super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_nfc2);
     mAdapter=NfcAdapter.getDefaultAdapter(this);
     resolveIntent(getIntent());
 }
@@ -35,18 +39,43 @@ public class NfcActivity extends AppCompatActivity {
         String action = intent.getAction();
         Log.d("NFC READINGS", "Action recupereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
         if (NfcAdapter.ACTION_TAG_DISCOVERED.equals(action)) {
-            byte[] idmain = intent.getByteArrayExtra(NfcAdapter.EXTRA_ID);
+           Tag idmain = intent.getParcelableExtra((NfcAdapter.EXTRA_TAG)) ;
           //  Parcelable[] rawMsgs = intent.getParcelableArrayExtra(NfcAdapter.EXTRA_ID);
-            currentId=idmain[0];
+          //  currentId=idmain.clone();
             NdefMessage[] messages;
-            Log.d("NFC READINGS", "action tostring=" + action+ " ID="+idmain);
+            currentId=convertByteArrayToHexString(idmain.getId());
+            Log.d("NFC READINGS", "action tostring=" + action + " ID=" +currentId );
 
         } else {
             finish();
             return;
         }
+        TextView textView = (TextView) findViewById(R.id.tagid);
+        textView.setText("id= "+currentId);
+
     }
 
+
+    public static String convertByteArrayToHexString (byte[] b) {
+        if (b != null) {
+            StringBuilder s = new StringBuilder(2 * b.length);
+            for (int i = 0; i < b.length; ++i) {
+                final String t = Integer.toHexString(b[i]);
+                final int l = t.length();
+                if (l > 2) {
+                    s.append(t.substring(l - 2));
+                } else {
+                    if (l == 1) {
+                        s.append("0");
+                    }
+                    s.append(t);
+                }
+            }
+            return s.toString();
+        } else {
+            return "";
+        }
+    }
     String getTextData(byte[] payload) {
         String texteCode = ((payload[0] & 0200) == 0) ? "UTF-8" : "UTF-16";
         int langageCodeTaille = payload[0] & 0077;
