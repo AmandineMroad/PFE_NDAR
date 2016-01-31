@@ -19,7 +19,8 @@
     <!-- Global -->
     <string name="menu_3d">3D</string>
     <string name="menu_audio">audio</string>
-    <string name="menu_assoc">assoc</string>
+    <!--<string name="menu_assoc">assoc</string>-->
+    <string name="menu_images">images</string>
     <string name="menu_infos">infos</string>
     <!-- inutiles ? -->
     <string name="menu_fav">fav</string>

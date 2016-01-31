@@ -52,7 +52,7 @@ public class PopUp extends DialogFragment{
                     //TODO display menu
                     Intent intent = new Intent(activity.getApplicationContext(), MenuActivity.class);
 //                    intent.putIntegerArrayListExtra("menu_content", flag.getPiece().getMenuArrayList());
-                    intent.putExtra("menu_cont", flag.getPiece().getMenuArray());
+                    intent.putExtra("menu_content", flag.getPiece().getMenuArray());
                     Log.i("pop up", "breakpoint");
                     startActivity(intent);
 

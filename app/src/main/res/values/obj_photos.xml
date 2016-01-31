@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="photo_galery_1">
-        <item></item>
-        <item></item>
+        <item>@drawable/images_test_0</item>
+        <item>@drawable/images_test_1</item>
+        <item>@drawable/images_test_2</item>
     </array>
 </resources>

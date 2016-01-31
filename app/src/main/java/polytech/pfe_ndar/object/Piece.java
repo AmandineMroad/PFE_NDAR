@@ -44,7 +44,7 @@ public class Piece{
     public static final int INDEX_3D = 0;
     public static final int INDEX_AUDIO = 1;
     public static final int INDEX_INFOS = 2;
-    public static final int INDEX_ASSOC = 3;
+    public static final int INDEX_IMAGES = 3;
 
     public ArrayList<Integer> getMenuArrayList (){
         ArrayList<Integer> menu = new ArrayList<>(4);
@@ -63,8 +63,8 @@ public class Piece{
                 case R.string.menu_audio:
                     menu.set(INDEX_AUDIO, menuArray.getResourceId(i+1,0));
                     break;
-                case R.string.menu_assoc:
-                    menu.set(INDEX_ASSOC, menuArray.getResourceId(i+1,0));
+                case R.string.menu_images:
+                    menu.set(INDEX_IMAGES, menuArray.getResourceId(i+1,0));
                     break;
                 case R.string.menu_infos:
                     menu.set(INDEX_INFOS, menuArray.getResourceId(i+1,0));
@@ -92,8 +92,8 @@ public class Piece{
                 case R.string.menu_audio:
                     menu[INDEX_AUDIO] = menuArray.getResourceId(i + 1, 0);
                     break;
-                case R.string.menu_assoc:
-                    menu[INDEX_ASSOC] = menuArray.getResourceId(i + 1, 0);
+                case R.string.menu_images:
+                    menu[INDEX_IMAGES] = menuArray.getResourceId(i + 1, 0);
                     break;
                 case R.string.menu_infos:
                     menu[INDEX_INFOS] = menuArray.getResourceId(i + 1, 0);

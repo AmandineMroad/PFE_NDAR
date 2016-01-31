@@ -2,11 +2,10 @@ package polytech.pfe_ndar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.ArrayRes;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageButton;
-
-import java.util.ArrayList;
 
 import polytech.pfe_ndar.objdisplaytools.views.Obj3DRenderer;
 import polytech.pfe_ndar.object.Piece;
@@ -22,8 +21,7 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.menu);
 
         Bundle extras = getIntent().getExtras();
-        ArrayList<Integer> menu_content = extras.getIntegerArrayList("menu_content");
-        @IdRes int menu[] = extras.getIntArray("menu_cont") ;
+        @IdRes int menu[] = extras.getIntArray("menu_content") ;
         Intent intent;
         String s;
         @IdRes int tmp;
@@ -50,7 +48,12 @@ public class MenuActivity extends AppCompatActivity {
                         button = (ImageButton) findViewById(R.id.menu_button_infos);
                         button.setOnClickListener(new MenuOnClickListener(this, intent));
                         break;
-                    case Piece.INDEX_ASSOC:
+                    case Piece.INDEX_IMAGES:
+                        @ArrayRes int arrayRes = menu[i];
+                        intent = new Intent(getApplicationContext(), ImageActivity.class);
+                        intent.putExtra("array_resId", arrayRes);
+                        button = (ImageButton) findViewById(R.id.menu_button_images);
+                        button.setOnClickListener(new MenuOnClickListener(this,intent));
                         break;
                 }
 
