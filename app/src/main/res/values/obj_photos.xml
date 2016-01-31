@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <array name="photo_galery_1">
+    <array name="photo_galery_12001">
+        <item>@drawable/images_test_0</item>
+        <item>@drawable/images_test_1</item>
+        <item>@drawable/images_test_2</item>
+    </array>
+
+    <array name="photo_galery_12002">
         <item>@drawable/images_test_0</item>
         <item>@drawable/images_test_1</item>
         <item>@drawable/images_test_2</item>

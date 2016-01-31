@@ -23,7 +23,7 @@
         <item>@string/menu_infos</item>
         <item>@string/large_text</item>
         <item>@string/menu_images</item>
-        <item>@array/photo_galery_1</item> <!-- TMP -->
+        <item>@array/photo_galery_12001</item>
     </array>
 
 
@@ -41,7 +41,7 @@
         <item>@string/menu_3d</item>
         <item>@string/object_12002_raw3D</item>
         <item>@string/menu_images</item>
-        <item>@array/photo_galery_1</item> <!-- TMP -->
+        <item>@array/photo_galery_12002</item>
     </array>
 
 
