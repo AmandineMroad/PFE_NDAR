@@ -43,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
         ImageButton buttonMap = (ImageButton) findViewById(R.id.button_home_map);
         buttonMap.setOnClickListener(buttonMapListener);
 
-        Button button3D = (Button) findViewById(R.id.button3D);
-        button3D.setOnClickListener(but3dLis);
+       // Button button3D = (Button) findViewById(R.id.button3D);
+       // button3D.setOnClickListener(but3dLis);
 
         //TMP affiche les dimensions de l'écran (en dp)
-        TextView textView = (TextView) findViewById(R.id.homeTextView);
-        textView.setText(" screen size : width = "
-                + ScreenTools.getScreenDpWidth() + " dp   _    height = "
-                + ScreenTools.getScreenDpHeight() + " dp");
+        //TextView textView = (TextView) findViewById(R.id.homeTextView);
+        //textView.setText(" screen size : width = "
+         //       + ScreenTools.getScreenDpWidth() + " dp   _    height = "
+          //      + ScreenTools.getScreenDpHeight() + " dp");
     }
     /* Map launcher */
     OnClickListener buttonMapListener = new OnClickListener() {

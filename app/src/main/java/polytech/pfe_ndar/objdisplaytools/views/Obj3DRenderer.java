@@ -41,10 +41,10 @@ public class Obj3DRenderer extends RendererActivity {
            // scene.lights().add(new Light());
 
             Light myLight = new Light();
-            myLight.diffuse.setAll(50,100,120,100);
-            myLight.ambient.setAll(0,0,0,0);
-            myLight.specular.setAll(0,0,0,0);
-            myLight.emissive.setAll(0, 0, 0, 0);
+            myLight.diffuse.setAll(242,208,164,255);
+            myLight.ambient.setAll(242,208,164,90);
+            myLight.specular.setAll(164,48,63,255);
+            myLight.emissive.setAll(164,48,63,255);
             myLight.position.setZ(400);
             myLight.position.setY(400);
 
