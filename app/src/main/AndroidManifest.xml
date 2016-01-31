@@ -10,8 +10,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar" >
-
+        android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -36,13 +35,16 @@
         </activity>
         <activity
             android:name=".objdisplaytools.views.Obj3DRenderer"
-            android:label="@string/app_name"/>
-
-        <activity android:name=".MenuActivity"/>
             android:label="@string/app_name" />
+        <activity android:name=".MenuActivity" />
+        android:label="@string/app_name" />
         <activity
             android:name=".objdisplaytools.views.Activity3D"
-            android:label="@string/app_name"></activity>
+            android:label="@string/app_name" />
+        <activity
+            android:name=".TextActivity"
+            android:label="@string/title_activity_text"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

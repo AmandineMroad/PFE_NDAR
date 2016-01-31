@@ -25,6 +25,7 @@ public class MenuActivity extends AppCompatActivity {
         ArrayList<Integer> menu_content = extras.getIntegerArrayList("menu_content");
         @IdRes int menu[] = extras.getIntArray("menu_cont") ;
         Intent intent;
+        String s;
         @IdRes int tmp;
         ImageButton button;
             for(int i=0; i<4; i++){
@@ -33,15 +34,21 @@ public class MenuActivity extends AppCompatActivity {
             if(tmp != 0){
                 switch (i){
                     case Piece.INDEX_3D:
-                        String s = getString(menu[i]);
+                         s = getString(menu[i]);
                         intent = new Intent(getApplicationContext(), Obj3DRenderer.class);
                         intent.putExtra("raw_path", s);
                         button = (ImageButton) findViewById(R.id.menu_button_3d);
                         button.setOnClickListener(new MenuOnClickListener(this, intent));
                         break;
                     case Piece.INDEX_AUDIO:
+
                         break;
                     case Piece.INDEX_INFOS:
+                        s = getString(menu[i]);
+                        intent = new Intent(getApplicationContext(), TextActivity.class);
+                        intent.putExtra("raw_path", s);
+                        button = (ImageButton) findViewById(R.id.menu_button_infos);
+                        button.setOnClickListener(new MenuOnClickListener(this, intent));
                         break;
                     case Piece.INDEX_ASSOC:
                         break;

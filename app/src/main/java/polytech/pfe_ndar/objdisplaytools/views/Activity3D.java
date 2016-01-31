@@ -32,7 +32,4 @@ public class Activity3D extends AppCompatActivity {
         setSupportActionBar(toolbar);
        // this.startActivity( new Intent(this,Obj3DRenderer.class));
     }
-
-
-
 }

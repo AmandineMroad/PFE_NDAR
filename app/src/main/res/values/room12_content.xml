@@ -20,6 +20,8 @@
     <array name="menu_r12001">
         <item>@string/menu_3d</item>
         <item>@string/object_12001_raw3D</item>
+        <item>@string/menu_infos</item>
+        <item>@string/large_text</item>
     </array>
 
 

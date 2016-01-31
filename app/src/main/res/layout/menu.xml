@@ -20,7 +20,7 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:text="Option 2"
-        android:id="@+id/option2"
+        android:id="@+id/menu_button_son"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -33,7 +33,7 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:text="Option 3"
-        android:id="@+id/option3"
+        android:id="@+id/menu_button_images"
         android:layout_below="@+id/menu_button_3d"
         android:layout_alignLeft="@+id/menu_button_3d"
         android:layout_alignStart="@+id/menu_button_3d"
@@ -45,10 +45,10 @@
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:text="Option 4"
-        android:id="@+id/option4"
-        android:layout_alignTop="@+id/option3"
-        android:layout_alignLeft="@+id/option2"
-        android:layout_alignStart="@+id/option2"
+        android:id="@+id/menu_button_infos"
+        android:layout_alignTop="@+id/menu_button_images"
+        android:layout_alignLeft="@+id/menu_button_son"
+        android:layout_alignStart="@+id/menu_button_son"
         android:background="#f2d0a5"
         android:src="@drawable/menu_icon_info" />
 
@@ -57,9 +57,9 @@
         android:layout_height="160dp"
         android:text="Option 5"
         android:id="@+id/option5"
-        android:layout_below="@+id/option3"
-        android:layout_alignLeft="@+id/option3"
-        android:layout_alignStart="@+id/option3"
+        android:layout_below="@+id/menu_button_images"
+        android:layout_alignLeft="@+id/menu_button_images"
+        android:layout_alignStart="@+id/menu_button_images"
         android:background="#f2d0a4"
         android:layout_marginTop="5dp" />
 
@@ -69,8 +69,8 @@
         android:text="Option 6"
         android:id="@+id/option6"
         android:layout_alignTop="@+id/option5"
-        android:layout_alignLeft="@+id/option4"
-        android:layout_alignStart="@+id/option4"
+        android:layout_alignLeft="@+id/menu_button_infos"
+        android:layout_alignStart="@+id/menu_button_infos"
         android:background="#a63141" />
 
     <ImageButton
@@ -79,7 +79,7 @@
         android:text="Option 7"
         android:id="@+id/option7"
         android:layout_below="@+id/option5"
-        android:layout_alignLeft="@+id/option3"
+        android:layout_alignLeft="@+id/menu_button_images"
         android:layout_marginTop="5dp"
         android:background="#a73242" />
 
@@ -89,7 +89,7 @@
         android:text="Option 8"
         android:id="@+id/option8"
         android:layout_below="@+id/option6"
-        android:layout_alignLeft="@+id/option4"
+        android:layout_alignLeft="@+id/menu_button_infos"
         android:background="#f2d0a5"
         android:layout_marginTop="5dp" />
 
