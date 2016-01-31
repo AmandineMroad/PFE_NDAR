@@ -42,9 +42,6 @@ public class Room {
         this.roomFlag = (ImageView) activity.findViewById(roomFlagID);
         if (button != null) //TMP
             button.setOnClickListener(new MapOnClickListener(this, activity));
-
-
-        //TODO init flags !
     }
 
     /***********************************************
@@ -53,26 +50,18 @@ public class Room {
     public int getNumber(){
         return number;
     }
-
     public ImageButton getButton() {
         return button;
     }
 
-
-    public int getLayout() {
+    public @LayoutRes int getLayout() {
         return layout_flags;
     }
 
     public ArrayList<Flag> getFlagsSet() {
         return flagsSet;
     }
-    public void addFlag(Flag flag) {
-        flagsSet.add(flag);
-    }
 
-    public @LayoutRes int getFlagLayoutID(){
-        return layout_flags;
-    }
 
     /***********************************************
      * Flags management
@@ -100,7 +89,6 @@ public class Room {
      * @param imageView: image of last flag (from MapTools)
      */
     public void setRoomLastFlag(ImageView imageView) { //question imageView en parametre ou via appel static à mapTools ?
-
         ViewGroup.MarginLayoutParams buttonLayoutParams = (ViewGroup.MarginLayoutParams) button.getLayoutParams();
         ViewGroup.MarginLayoutParams imageViewLayoutParams = (ViewGroup.MarginLayoutParams) imageView.getLayoutParams();
 
@@ -108,37 +96,33 @@ public class Room {
         int y = buttonLayoutParams.topMargin + (buttonLayoutParams.height / 2) - (imageViewLayoutParams.height / 2);
 
         imageViewLayoutParams.setMargins(x, y, 0, 0);
-
         imageView.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * Instantiate all flags/pieces/tag of the room
+     * @param activity : mapActivity
+     * @param roomContent: resources array from room_content.xml
+     */
     public final void initFlags(Activity activity, TypedArray roomContent){
         int numberOfPieces = roomContent.length();
         Resources resources = activity.getResources();
-//        FrameLayout layout = (FrameLayout) View.inflate(activity.getApplicationContext(), R.layout.layout_flags_room_12, null);//FIXME layout
-//        FrameLayout layout = (FrameLayout) View.inflate(activity.getApplicationContext(), layout_flags, null);
         TypedArray objectData;
-//        FrameLayout layout = (FrameLayout) activity.getLayoutInflater().inflate( layout_flags, null);
-        int i,j;
+        int i;
         Piece piece;
         Flag flag;
-        Tag tag;
-        ImageButton imageButton;
         //pieces/flags initialization loop
         for (i = 0; i< numberOfPieces; i++){
             //getting object description array
             objectData = resources.obtainTypedArray(roomContent.getResourceId(i, 0));
-            //create piece
-//            piece = new Piece(this.number, objectData.getString(1), objectData.getString(2));//TODO intégrer autres attributs de piece
-//TODO propre
-            piece = new Piece(this.number, objectData.getString(1), objectData.getString(2),resources.obtainTypedArray(objectData.getResourceId(3,0)));//TODO intégrer autres attributs de piece
-            //imageButton = (ImageButton) layout.findViewById(objectData.getResourceId(0,0));
-           // flag = new Flag(imageButton, piece, activity ); //FIXME
-            flag = new Flag(objectData.getResourceId(0,0), piece, activity );
-            tag = new Tag(flag , objectData.getString(4));
+            //create piece, flag and tag
+            piece = new Piece(this.number, objectData.getString(1), objectData.getString(2),
+                    resources.obtainTypedArray(objectData.getResourceId(3,0)));//TODO intégrer autres attributs de piece
+            flag = new Flag(objectData.getResourceId(0,0), piece);
+            new Tag(flag , objectData.getString(4));
+            //store flag
             flagsSet.add(flag);
         }
-
     }
 
 }

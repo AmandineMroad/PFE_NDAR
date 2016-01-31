@@ -3,7 +3,6 @@ package polytech.pfe_ndar.util;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -22,25 +21,22 @@ import polytech.pfe_ndar.util.listeners.FlagOnClickListener;
 public class MapTools {
     public static final int NUMBER_OF_ROOMS = 13;
 
-    //QUESTION Stocker ici le tableau des "à voir" ?
-
     private static Flag lastSeen = null;
     private static ArrayList<Room> rooms;
     private static Activity mapActivity;
 
     private static ImageView roomLastFlag;
 
-
     /***********************************************
      * Accessors
      ***********************************************/
     public static void setLastSeen(Flag flag) {
         if (lastSeen != null) {
-            lastSeen.setToSeen();
+            lastSeen.setToSeen(mapActivity);
         }
 
         lastSeen = flag;
-        lastSeen.setToLast();
+        lastSeen.setToLast(mapActivity);
     }
 
     /***********************************************
@@ -50,26 +46,23 @@ public class MapTools {
      * Initialize MapTools, set activity and roomLastFlag; declare rooms and initialize them with their flags/pieces
      * @param activity : mapActivity
      */
-
     public static void initMap(Activity activity) {
-
         mapActivity = activity;
-        rooms = new ArrayList<>(13);
-
+        rooms = new ArrayList<>(NUMBER_OF_ROOMS);
         roomLastFlag = (ImageView) activity.findViewById(R.id.map_global_flag_last);
         roomLastFlag.setVisibility(View.INVISIBLE);
-
         initRooms();
     }
 
-    /**
-     * Create rooms and their content and store them
-     */
+
     private static final int IMAGE_BUTTON_INDEX = 0;
     private static final int LAYOUT_INDEX = 1;
     private static final int GLOBAL_FLAG_INDEX = 2 ;
     private static final int ROOM_CONTENT_INDEX = 3;
 
+    /**
+     * Create rooms and their content and store them
+     */
     private static void initRooms() {
         //Get the construction typed array
         Resources resources = mapActivity.getResources();
@@ -103,7 +96,6 @@ public class MapTools {
      * Display flags on global map on rooms in which there is a marked piece or the last seen piece
      */
     public static void setRoomsGlobalFlags() {
-        //FIXME DONE je crois
         for (Room room : rooms) {
             if (room != null) {//TMP
                 if (room.containsMarkedFlags()) {
@@ -115,7 +107,6 @@ public class MapTools {
         }
         //Setting last flag
         if (lastSeen != null) rooms.get(lastSeen.getRoomNumber() - 1).setRoomLastFlag(roomLastFlag);
-
     }
 
     /***********************************************
@@ -129,12 +120,7 @@ public class MapTools {
             button = (ImageButton) mapActivity.findViewById(flag.getButtonID());
             button.setOnClickListener(new FlagOnClickListener(flag, mapActivity));
         }
-
-        Log.w("InitDetailledRoom", "init done");
-
     }
-
-
 
 
 }

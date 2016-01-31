@@ -23,9 +23,6 @@ public class ImageSwiper extends PagerAdapter {
     private Context context;
     private LayoutInflater layoutInflater;
 
-    public ImageSwiper(Context context){
-        this.context = context;
-    }
 
     public ImageSwiper(Context context, @ArrayRes int arrayResId){
         this.context = context;
