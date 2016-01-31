@@ -19,7 +19,7 @@ import polytech.pfe_ndar.R;
  * Nicolas DELRIO, Amandine ROGER, IRM 2016
  */
 public class ImageSwiper extends PagerAdapter {
-    private int[] images_resources = {R.drawable.images_test_0, R.drawable.images_test_1, R.drawable.images_test_2};
+    private int[] images_resources ;
     private Context context;
     private LayoutInflater layoutInflater;
 
@@ -33,6 +33,7 @@ public class ImageSwiper extends PagerAdapter {
         TypedArray array = resources.obtainTypedArray(arrayResId);
 
         int imagesCount = array.length();
+        images_resources = new int[imagesCount];
         for (int i =0; i<imagesCount; i++){
             images_resources[i] = array.getResourceId(i, 0);
         }
