@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="#58453a">
 
     <ImageButton
         android:layout_width="160dp"
@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="10dp"
-        android:background="#ffffff"
+        android:background="#FFF2D0A5"
         android:src="@drawable/menu_icon_3d" />
 
     <ImageButton
@@ -26,7 +26,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="25dp"
         android:layout_marginTop="10dp"
-        android:background="#fff265" />
+        android:background="#a63141"
+        android:src="@drawable/menu_icon_son" />
 
     <ImageButton
         android:layout_width="160dp"
@@ -37,7 +38,8 @@
         android:layout_alignLeft="@+id/menu_button_3d"
         android:layout_alignStart="@+id/menu_button_3d"
         android:layout_marginTop="5dp"
-        android:background="#ff9900" />
+        android:background="#a53040"
+        android:src="@drawable/menu_icon_tof" />
 
     <ImageButton
         android:layout_width="160dp"
@@ -47,7 +49,8 @@
         android:layout_alignTop="@+id/option3"
         android:layout_alignLeft="@+id/option2"
         android:layout_alignStart="@+id/option2"
-        android:background="#62f407" />
+        android:background="#f2d0a5"
+        android:src="@drawable/menu_icon_info" />
 
     <ImageButton
         android:layout_width="160dp"
@@ -57,7 +60,7 @@
         android:layout_below="@+id/option3"
         android:layout_alignLeft="@+id/option3"
         android:layout_alignStart="@+id/option3"
-        android:background="#03fe8d"
+        android:background="#f2d0a4"
         android:layout_marginTop="5dp" />
 
     <ImageButton
@@ -68,7 +71,7 @@
         android:layout_alignTop="@+id/option5"
         android:layout_alignLeft="@+id/option4"
         android:layout_alignStart="@+id/option4"
-        android:background="#01fedc" />
+        android:background="#a63141" />
 
     <ImageButton
         android:layout_width="160dp"
@@ -78,7 +81,7 @@
         android:layout_below="@+id/option5"
         android:layout_alignLeft="@+id/option3"
         android:layout_marginTop="5dp"
-        android:background="#066df3" />
+        android:background="#a73242" />
 
     <ImageButton
         android:layout_width="160dp"
@@ -87,7 +90,7 @@
         android:id="@+id/option8"
         android:layout_below="@+id/option6"
         android:layout_alignLeft="@+id/option4"
-        android:background="#0008f7"
+        android:background="#f2d0a5"
         android:layout_marginTop="5dp" />
 
 </RelativeLayout>

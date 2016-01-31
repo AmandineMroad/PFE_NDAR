@@ -10,7 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="polytech.pfe_ndar.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:showIn="@layout/activity_main"
+    android:background="#f2d0a4">
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,17 +24,67 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MAP"
-        android:id="@+id/button_home_map"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="3D"
         android:id="@+id/button3D"
-        android:layout_below="@+id/button_home_map"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button_home_map"
+        android:src="@drawable/menu_icon_welcome"
+        android:background="#a53040"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Bienvenue sur votre Multi-Guide, pour commencer votre visite accedez à la carte ou bien flashez directement un item"
+        android:layout_below="@+id/button3D"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#6e202b"
+        android:id="@+id/textView" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/logonfc"
+        android:layout_alignLeft="@+id/button_home_map"
+        android:layout_alignStart="@+id/button_home_map"
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2"
+        android:layout_above="@+id/button_home_map"
+        android:layout_below="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Flashez une Oeuvre"
+        android:id="@+id/textView2"
+        android:textColor="#a53040"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_above="@+id/button_home_map"
+        android:layout_alignTop="@+id/imageView2"
+        android:textAlignment="center"
+        android:singleLine="false"
+        android:gravity="center_vertical"
+        android:layout_alignRight="@+id/button_home_map"
+        android:layout_alignEnd="@+id/button_home_map" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="ou"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/button_home_map"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

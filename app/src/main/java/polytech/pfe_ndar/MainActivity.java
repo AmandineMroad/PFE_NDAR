@@ -1,11 +1,13 @@
 package polytech.pfe_ndar;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.io.UnsupportedEncodingException;
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         mapIntent = new Intent(this, MapActivity.class);
         intent3d = new Intent(this, Obj3DRenderer.class);
         //TMP map launcher
-        Button buttonMap = (Button) findViewById(R.id.button_home_map);
+        ImageButton buttonMap = (ImageButton) findViewById(R.id.button_home_map);
         buttonMap.setOnClickListener(buttonMapListener);
 
         Button button3D = (Button) findViewById(R.id.button3D);
