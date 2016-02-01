@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:id="@+id/audio_image_view"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="70dp"
+        android:background="#ffffff"
+        android:layout_marginBottom="40dp" />
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="450dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/audio_button_prev"
+            android:src="@drawable/audio_icon_prev"
+            android:background="#00ffffff"
+            android:layout_marginLeft="5dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/audio_button_play"
+            android:src="@drawable/audio_icon_play"
+            android:background="#00ffffff"
+            android:layout_gravity="left|top"
+            android:layout_marginLeft="80dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/audio_button_stop"
+            android:src="@drawable/audio_icon_stop"
+            android:background="#00ffffff"
+            android:layout_gravity="left|top"
+            android:layout_marginLeft="230dp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/audio_button_pause"
+            android:src="@drawable/audio_icon_pause"
+            android:background="#00ffffff"
+            android:layout_gravity="left|top"
+            android:layout_marginLeft="155dp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="380dp">
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/audio_seekbar"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="/00:00"
+            android:id="@+id/audio_final_text"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="35dp"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="00:00"
+            android:id="@+id/audio_current_text"
+            android:layout_gravity="top|right"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="45dp"
+            android:textColor="#ffffff" />
+    </FrameLayout>
+
+</FrameLayout>
