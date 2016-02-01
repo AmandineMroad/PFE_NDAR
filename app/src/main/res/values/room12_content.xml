@@ -24,6 +24,9 @@
         <item>@string/large_text</item>
         <item>@string/menu_images</item>
         <item>@array/photo_galery_12001</item>
+        <item>@string/menu_audio</item>
+        <item>@string/object_12001_rawAudio_01</item>
+
     </array>
 
 

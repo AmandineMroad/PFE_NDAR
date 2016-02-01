@@ -16,6 +16,7 @@ import polytech.pfe_ndar.util.listeners.MenuOnClickListener;
  * Nicolas DELRIO, Amandine ROGER, IRM 2016
  */
 public class MenuActivity extends AppCompatActivity {
+
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
@@ -24,22 +25,23 @@ public class MenuActivity extends AppCompatActivity {
         @IdRes int menu[] = extras.getIntArray("menu_content") ;
         Intent intent;
         String s;
-        @IdRes int tmp;
         ImageButton button;
             for(int i=0; i<4; i++){
-              //  tmp = menu_content.get(i);
-                tmp = menu[i];
-            if(tmp != 0){
+            if(menu[i] != 0){
                 switch (i){
                     case Piece.INDEX_3D:
-                         s = getString(menu[i]);
+                        s = getString(menu[i]);
                         intent = new Intent(getApplicationContext(), Obj3DRenderer.class);
                         intent.putExtra("raw_path", s);
                         button = (ImageButton) findViewById(R.id.menu_button_3d);
                         button.setOnClickListener(new MenuOnClickListener(this, intent));
                         break;
                     case Piece.INDEX_AUDIO:
-
+                        s = getString(menu[i]);
+                        intent = new Intent(getApplicationContext(), AudioActivity.class);
+                        intent.putExtra("raw_name", s);
+                        button = (ImageButton) findViewById(R.id.menu_button_son);
+                        button.setOnClickListener(new MenuOnClickListener(this, intent));
                         break;
                     case Piece.INDEX_INFOS:
                         s = getString(menu[i]);

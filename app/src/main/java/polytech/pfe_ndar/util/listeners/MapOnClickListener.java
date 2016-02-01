@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.util.Log;
 import android.view.View;
 
-import polytech.pfe_ndar.R;
 import polytech.pfe_ndar.object.Room;
 import polytech.pfe_ndar.util.MapTools;
 
@@ -26,9 +25,7 @@ public class MapOnClickListener implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        //activity.setContentView(R.layout.map_room);
-        //activity.setContentView(MapTools.getLayoutForRoom(room.getNumber()));
-        activity.setContentView(R.layout.layout_flags_room_12);
+        activity.setContentView(room.getLayout());
 
         if (first) {
             first = false; //TODO verifier nbre d'appel

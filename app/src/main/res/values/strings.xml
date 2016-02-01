@@ -32,6 +32,11 @@
     <string name="object_12001_description"> An amazing object from room 12</string>
     <string name="object_12001_raw3D">polytech.pfe_ndar:raw/ceteredtorso_obj</string>
     <string name="object_12001_Tag">044b4e9a513180</string>
+    <!--A terme mettre dans un tableau pour plusieurs audio-->
+    <!--<string name="object_12001_rawAudio_01">polytech.pfe_ndar:raw/grece_antique</string>-->
+    <string name="object_12001_rawAudio_01">grece_antique</string>
+
+
     <string name="object_12002_name"> Buste avec tête </string>
     <string name="object_12002_description"> Another amazing object from room 12</string>
     <string name="object_12002_raw3D">polytech.pfe_ndar:raw/busthead_obj</string>
