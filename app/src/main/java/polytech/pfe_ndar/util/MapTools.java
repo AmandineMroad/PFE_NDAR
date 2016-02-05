@@ -70,22 +70,24 @@ public class MapTools {
 
         TypedArray roomData;
         Room room = null;
-
-        //Rooms creation loop
-        for (int i = 0; i < NUMBER_OF_ROOMS; i++) {
-            //Get room_description typed array
-            roomData = resources.obtainTypedArray(constructionData.getResourceId(i, 0));
-            //TMP if tmp à supprimer
-            if(roomData.length() > 0) {
-                //Create room
-                room = new Room(i + 1, mapActivity, roomData.getResourceId(IMAGE_BUTTON_INDEX, 0),
-                        roomData.getResourceId(LAYOUT_INDEX, 0),roomData.getResourceId(GLOBAL_FLAG_INDEX, 0) );
-                //Add all flags
-                room.initFlags(mapActivity, resources.obtainTypedArray(roomData.getResourceId(ROOM_CONTENT_INDEX, 0)));
+        if (rooms.isEmpty()) {
+            //Rooms creation loop
+            for (int i = 0; i < NUMBER_OF_ROOMS; i++) {
+                //Get room_description typed array
+                roomData = resources.obtainTypedArray(constructionData.getResourceId(i, 0));
+                //TMP if tmp à supprimer
+                if (roomData.length() > 0) {
+                    //Create room
+                    room = new Room(i + 1, mapActivity, roomData.getResourceId(IMAGE_BUTTON_INDEX, 0),
+                            roomData.getResourceId(LAYOUT_INDEX, 0), roomData.getResourceId(GLOBAL_FLAG_INDEX, 0));
+                    //Add all flags
+                    room.initFlags(mapActivity, resources.obtainTypedArray(roomData.getResourceId(ROOM_CONTENT_INDEX, 0)));
+                }
+                //Store room
+                rooms.add(i, room);
             }
-            //Store room
-            rooms.add(i, room);
         }
+
     }
 
     /***********************************************

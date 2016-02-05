@@ -3,7 +3,7 @@
     package="polytech.pfe_ndar">
 
     <uses-permission android:name="android.permission.NFC" />
-    <uses-permission android:name="android.permission.NFC" />
+
 
     <application
         android:allowBackup="true"

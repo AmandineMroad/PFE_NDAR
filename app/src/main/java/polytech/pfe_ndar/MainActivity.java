@@ -32,9 +32,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Tag.initStatic();
+
         //TMP récupère les dimensions de l'écran en dp
         ScreenTools.init(this);
+        Tag.initStatic();
         // Create the intent for global map activity
         //startActivity(new Intent(this, NfcActivity.class));
         mapIntent = new Intent(this, MapActivity.class);

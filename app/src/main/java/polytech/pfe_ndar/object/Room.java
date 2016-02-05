@@ -104,25 +104,28 @@ public class Room {
      * @param activity : mapActivity
      * @param roomContent: resources array from room_content.xml
      */
-    public final void initFlags(Activity activity, TypedArray roomContent){
+    public final void initFlags(Activity activity, TypedArray roomContent) {
         int numberOfPieces = roomContent.length();
         Resources resources = activity.getResources();
         TypedArray objectData;
         int i;
         Piece piece;
         Flag flag;
-        //pieces/flags initialization loop
-        for (i = 0; i< numberOfPieces; i++){
-            //getting object description array
-            objectData = resources.obtainTypedArray(roomContent.getResourceId(i, 0));
-            //create piece, flag and tag
-            piece = new Piece(this.number, objectData.getString(1), objectData.getString(2),
-                    resources.obtainTypedArray(objectData.getResourceId(3,0)));//TODO intégrer autres attributs de piece
-            flag = new Flag(objectData.getResourceId(0,0), piece);
-            new Tag(flag , objectData.getString(4));
-            //store flag
-            flagsSet.add(flag);
+        if (flagsSet.isEmpty()) {
+            //pieces/flags initialization loop
+            for (i = 0; i < numberOfPieces; i++) {
+                //getting object description array
+                objectData = resources.obtainTypedArray(roomContent.getResourceId(i, 0));
+                //create piece, flag and tag
+                piece = new Piece(this.number, objectData.getString(1), objectData.getString(2),
+                        resources.obtainTypedArray(objectData.getResourceId(3, 0)));//TODO intégrer autres attributs de piece
+                flag = new Flag(objectData.getResourceId(0, 0), piece);
+                new Tag(flag, objectData.getString(4));
+                //store flag
+                flagsSet.add(flag);
+            }
         }
     }
+    public final void initFlags(){}
 
 }

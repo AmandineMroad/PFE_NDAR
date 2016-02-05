@@ -15,7 +15,7 @@ import polytech.pfe_ndar.util.listeners.MenuOnClickListener;
  * PFE_NDAR _ Polytech Marseille _ 2016
  * Nicolas DELRIO, Amandine ROGER, IRM 2016
  */
-public class MenuActivity extends AppCompatActivity {
+public class    MenuActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);

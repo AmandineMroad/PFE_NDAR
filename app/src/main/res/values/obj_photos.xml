@@ -7,8 +7,8 @@
     </array>
 
     <array name="photo_galery_12002">
-        <item>@drawable/images_test_0</item>
-        <item>@drawable/images_test_1</item>
-        <item>@drawable/images_test_2</item>
+        <item>@drawable/images_test_3</item>
+        <item>@drawable/images_test_4</item>
+        <item>@drawable/images_test_5</item>
     </array>
 </resources>

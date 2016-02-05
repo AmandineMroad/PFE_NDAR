@@ -3,7 +3,10 @@ package polytech.pfe_ndar.util.listeners;
 import android.app.Activity;
 import android.util.Log;
 import android.view.View;
+import android.os.Bundle;
 
+import polytech.pfe_ndar.MapActivity;
+import polytech.pfe_ndar.R;
 import polytech.pfe_ndar.object.Room;
 import polytech.pfe_ndar.util.MapTools;
 
@@ -20,15 +23,18 @@ public class MapOnClickListener implements View.OnClickListener {
         this.room = room;
         this.activity = activity;
         first = true;
+
     }
 
 
     @Override
     public void onClick(View v) {
         activity.setContentView(room.getLayout());
+        ((MapActivity)activity).mapmode=true;
 
         if (first) {
             first = false; //TODO verifier nbre d'appel
+            Log.d("ALERTE", "MULTIPLES APPELS");
             MapTools.initDetailledRoom(room.getNumber());
 
         }
@@ -37,4 +43,5 @@ public class MapOnClickListener implements View.OnClickListener {
         Log.w("MapListener", "on click performed");
 
     }
+
 }
